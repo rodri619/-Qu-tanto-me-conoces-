@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas y Respuestas</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="contenedor">
+    <h1>¿Qué tanto me conoces? </h1>
+
+    <section id="pantalla-inicio" class="pantalla">
+      <input type="text" id="nombre" placeholder="Tu nombre">
+      <button id="btn-crear" class="btn btn-principal">Crear sala</button>
+
+      <hr>
+
+      <input type="text" id="codigo" placeholder="Código de sala">
+      <button id="btn-unirse" class="btn btn-secundario">Unirme</button>
+
+      <p id="mensaje-error" class="error"></p>
+    </section>
+
+    <section id="pantalla-sala" class="pantalla" hidden>
+      <p class="etiqueta">Código de la sala</p>
+      <h2 id="codigo-grande"><span id="codigo-sala"></span></h2>
+      <ul id="lista-jugadores"></ul>
+      <button id="btn-empezar" class="btn btn-principal" hidden>Empezar partida</button>
+      <p id="error-sala" class="error"></p>
+    </section>
+
+    <section id="pantalla-ronda" class="pantalla" hidden>
+      <p id="rol-ronda"></p>
+      <h2 id="pregunta-ronda"></h2>
+      <p id="detalle-ronda"></p>
+
+      <div id="botones-validar" hidden>
+        <p>¿La respuesta fue correcta?</p>
+        <button id="btn-correcta" class="btn btn-principal">✅ Correcta</button>
+        <button id="btn-incorrecta" class="btn btn-secundario">❌ Incorrecta</button>
+      </div>
+
+      <div id="resultado-ronda" hidden>
+        <h3>📊 Puntuaciones</h3>
+        <ul id="tabla-puntos"></ul>
+      </div>
+
+      <button id="btn-otra-vez" class="btn btn-principal" hidden>Jugar otra vez</button>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>

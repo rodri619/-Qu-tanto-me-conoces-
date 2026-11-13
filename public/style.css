@@ -1,0 +1,236 @@
+/* ===== GENERAL ===== */
+
+/* Hace que el padding no agrande las cajas */
+* {
+box-sizing: border-box;
+}
+
+/* El fondo de toda la página */
+body {
+    margin: 0;
+    background-color: #0a1f44;
+    color: #0a1f44;
+    font-family: Arial, sans-serif;
+}
+
+/* Franja de rayas rojas y blancas arriba como las Chivas */
+body::before {
+  content: "";
+  display: block;
+  height: 50px;
+  background: repeating-linear-gradient(
+    90deg,
+    #c8102e 3px,
+    #c8102e 30px,
+    #ffffff 30px,
+    #ffffff 60px
+  );
+}
+
+/* Regla de seguridad: lo que tenga "hidden" se oculta de verdad */
+[hidden] {
+    display: none !important;
+}
+
+/* ===== CONTENEDOR ===== */
+
+/* La caja que centra todo y limita el ancho */
+.contenedor {
+  max-width: 750px;
+  margin: 0 auto;      /* centra la caja */
+  padding: 13px 15px;
+}
+
+/* Letras de "Preguntas y Respuestas con Ro" */
+h1 {
+  font-size: clamp(1.6rem, 6vw, 2.5rem);
+  text-align: center;
+  color: white;
+  text-shadow: 3px 3px 0 #c8102e;
+}
+
+/* ===== TARJETAS (las dos pantallas) ===== */
+
+.pantalla {
+  background-color: white;
+  color: #0a1f44;
+  padding: 20px;
+  border-radius: 16px;
+  border-top: 8px solid #c8102e;
+  border-bottom: 8px solid #00338d;
+}
+
+/* ===== CAMPOS DE TEXTO ===== */
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  color: #0a1f44;
+  border: 2px solid #c9d3e8;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Cuando haces clic, el borde se pone azul */
+input:focus {
+  outline: none;
+  border-color: #00338d;
+}
+
+hr {
+  border: none;
+  border-top: 2px dashed #c9d3e8;
+  margin: 16px 0;
+}
+
+
+/* ===== BOTONES ===== */
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-principal {
+    background-color: #00338d;
+}
+
+.btn-secundario {
+    background-color: #00338d;
+}
+
+/* Cuando pasas el mouse encima, se ve un poco más claro */
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* ===== MENSAJE DE ERROR ===== */
+
+/* Amarillo para que se note sobre la tarjeta roja */
+.error {
+color: #c8102e;
+font-weight: bold;
+text-align: center;
+}
+
+/* ===== SALA DE ESPERA ===== */
+
+/* El texto pequeño "Código de la sala" */
+.etiqueta {
+  text-align: center;
+  margin: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #5b6b8c;
+}
+
+/* El código grande */
+#codigo-grande {
+  text-align: center;
+  font-size: clamp(3rem, 18vw, 7rem);
+  letter-spacing: 8px;
+  margin: 10px 0 20px 0;
+  color: #c8102e;
+  text-shadow: 4px 4px 0 #00338d;
+}
+
+/* La lista de jugadores */
+#lista-jugadores {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Cada nombre como tarjetita */
+#lista-jugadores li {
+  background-color: #eef2fb;
+  color: #0a1f44;
+  font-weight: bold;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border-left: 8px solid #00338d;
+  animation: entrar 0.3s ease;
+}
+
+
+/* Los jugadores pares llevan la barra roja */
+#lista-jugadores li:nth-child(even) {
+  border-left-color: #c8102e;
+}
+
+/* Animación: el jugador aparece deslizándose */
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =====  ===== */
+
+#pantalla-ronda {
+  text-align: center;
+}
+
+
+/* "Te toca preguntar / responder" como etiqueta azul */
+#rol-ronda {
+  display: inline-block;
+  background-color: #00338d;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin: 0 0 16px 0;
+}
+
+/* La pregunta, grande y en azul oscuro */
+#pregunta-ronda {
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  color: #0a1f44;
+  margin: 10px 0 16px 0;
+}
+
+/* Quién le pregunta a quién */
+#detalle-ronda {
+  color: #5b6b8c;
+  margin: 0;
+} 
+
+#botones-validar .btn {
+  margin-bottom: 11px;
+}
+
+#btn-incorrecta {
+  background-color: #c8102e;
+}
+
+#tabla-puntos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#tabla-puntos li {
+  background-color: #eef2fb;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  border-left: 8px solid #00338d;
+}
