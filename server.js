@@ -23,7 +23,6 @@ const preguntas = [
   'Dime una película que me gusta mucho',
   'Define mi personalidad',
   'Menciona algo que me moleste',
-  '¿Hay algo que coleccionó? si sí, menciónalo',
   '¿Quién es mi mejor amig@?',
   '¿Prefiero la pizza con piña o sin?',
   '¿Soy alérgico a algo? si sí menciónalo',
